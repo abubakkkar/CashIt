@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - CashIt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo.jpg" alt="CashIt Logo"
+            style="width: 40px; height: 40px; border-radius: 8px;">
+            <a href="index.html" class="home-link"><h1>CashIt</h1></a>
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+            <a href="policy.html">Privacy Policy</a>
+        </div>
+        <div class="nav-actions">
+        <a href="login.html">
+    <button class="login-btn" id="loginBtn">Login</button>
+</a>
+</div>
+        <div class="menu-btn" id="menuBtn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+    <div class="login-wrap">
+        <div class="login-card">
+            <div class="login-header">
+                <img src="images/logo.jpg" alt="Logo" style="height:60px; border-radius:12px;">
+                <h2>CashIt</h2>
+                <p style="color:#64748b;">Secure Banking Login</p>
+            </div>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label class="form-label">CNIC Number</label>
+                    <div class="input-wrap">
+                        <input type="text" id="cnic" class="form-input" placeholder="00000-0000000-0" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">PIN Code</label>
+                    <div class="input-wrap">
+                        <input type="password" id="pin" class="form-input" placeholder="****" maxlength="4" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">Access Account</button>
+            </form>
+
+            <div style="margin-top:24px; font-size:0.9rem;">
+                <a href="register.html" style="color: #3eb646; font-weight:600; text-decoration:none;">Create Account</a>
+                <span style="color:#cbd5e1; margin:0 12px;">|</span>
+                <a href="admin-login.html" style="color:#64748b; text-decoration:none;">Admin</a>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payments - CashIt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="portal-wrap">
+        <div class="portal-card">
+            <div class="portal-header">
+                <img src="images/logo.jpg" alt="Logo" style="height:40px; border-radius:8px;">
+                <h2 style="font-size:1.5rem;">Payment Portal</h2>
+            </div>
+
+            <!-- Payment Selector -->
+            <div style="margin-bottom:24px;">
+                <label class="form-label">Select Payment Type</label>
+                <select id="paymentSelector" class="form-select">
+                    <option value="">Select an option...</option>
+                    <option value="transfer">Transfer to Account</option>
+                    <option value="bill">Bill Payment</option>
+                    <option value="tax">Tax Payment</option>
+                    <option value="challan">Challan Payment</option>
+                    <option value="fee">Fee Payment</option>
+                </select>
+            </div>
+
+            <!-- Transfer Form -->
+            <form id="transferForm" class="payment-form hidden">
+                <div class="form-group">
+                    <label class="form-label">Recipient CNIC</label>
+                    <div class="input-wrap">
+                        <input type="text" id="recipientCnic" class="form-input" placeholder="00000-0000000-0" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Amount (PKR)</label>
+                    <div class="input-wrap">
+                        <input type="number" id="transferAmount" class="form-input" placeholder="0.00" min="1" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Send Money</button>
+            </form>
+
+            <!-- Bill Payment Form (PSID removed) -->
+            <form id="billForm" class="payment-form hidden">
+                <div class="form-group">
+                    <label class="form-label">Bill Type</label>
+                    <select id="billType" class="form-select">
+                        <option value="Electricity">Electricity</option>
+                        <option value="Water">Water</option>
+                        <option value="Gas">Gas</option>
+                        <option value="Internet">Internet</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Consumer ID</label>
+                    <div class="input-wrap">
+                        <input type="text" id="consumerId" class="form-input" placeholder="Enter ID" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Amount (PKR)</label>
+                    <div class="input-wrap">
+                        <input type="number" id="billAmount" class="form-input" placeholder="0.00" min="1" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">Pay Bill</button>
+            </form>
+
+            <!-- Tax Payment Form -->
+            <form id="taxForm" class="payment-form hidden">
+                <div class="form-group">
+                    <label class="form-label">PSID Number</label>
+                    <div class="input-wrap">
+                        <input type="text" id="taxId" class="form-input" placeholder="Enter PSID" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Amount (PKR)</label>
+                    <div class="input-wrap">
+                        <input type="number" id="taxAmount" class="form-input" placeholder="0.00" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Pay Tax</button>
+            </form>
+
+            <!-- Challan Payment Form -->
+            <form id="challanForm" class="payment-form hidden">
+                <div class="form-group">
+                    <label class="form-label">Challan Number</label>
+                    <div class="input-wrap">
+                        <input type="text" id="challanNumber" class="form-input" placeholder="Enter Challan Number" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">PSID Number</label>
+                    <div class="input-wrap">
+                        <input type="text" id="challanPisd" class="form-input" placeholder="Enter PSID" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Amount (PKR)</label>
+                    <div class="input-wrap">
+                        <input type="number" id="challanAmount" class="form-input" placeholder="0.00" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">Pay Challan</button>
+            </form>
+
+            <!-- Fee Payment Form -->
+            <form id="feeForm" class="payment-form hidden">
+                <div class="form-group">
+                    <label class="form-label">Institute Name</label>
+                    <div class="input-wrap">
+                        <input type="text" id="instituteName" class="form-input" placeholder="Enter Institute Name" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Student Roll No.</label>
+                    <div class="input-wrap">
+                        <input type="text" id="rollNo" class="form-input" placeholder="Enter Roll No." required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Challan Number</label>
+                    <div class="input-wrap">
+                        <input type="text" id="feePisd" class="form-input" placeholder="Enter Challan No" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Fee Amount (PKR)</label>
+                    <div class="input-wrap">
+                        <input type="number" id="feeAmount" class="form-input" placeholder="0.00" min="1" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">Pay Fee</button>
+            </form>
+
+            <!-- Back -->
+            <div style="margin-top:24px; text-align:center;">
+                <a href="dashboard.html" style="color:#64748b; text-decoration:none; font-size:0.9rem; display:flex; align-items:center; justify-content:center; gap:8px;">
+                    <svg class="icon" style="width:16px;" viewBox="0 0 24 24">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    Back to Dashboard
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <!-- Selector Logic -->
+    <script>
+        document.getElementById('paymentSelector').addEventListener('change', function(e) {
+    document.querySelectorAll('.payment-form').forEach(f => f.classList.add('hidden'));
+    const val = e.target.value;
+
+    if (val === 'transfer') document.getElementById('transferForm').classList.remove('hidden');
+    if (val === 'bill') document.getElementById('billForm').classList.remove('hidden');
+    if (val === 'tax') document.getElementById('taxForm').classList.remove('hidden');
+    if (val === 'challan') document.getElementById('challanForm').classList.remove('hidden');
+    if (val === 'fee') document.getElementById('feeForm').classList.remove('hidden');
+});
+    </script>
+</body>
+</html>

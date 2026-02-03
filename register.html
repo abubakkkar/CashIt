@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - CashIt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo.jpg" alt="CashIt Logo"
+            style="width: 40px; height: 40px; border-radius: 8px;">
+            <a href="index.html" class="home-link"><h1>CashIt</h1></a>
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+            <a href="policy.html">Privacy Policy</a>
+        </div>
+        <div class="nav-actions">
+        <a href="login.html">
+    <button class="login-btn" id="loginBtn">Login</button>
+</a>
+</div>
+        <div class="menu-btn" id="menuBtn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+    <div class="login-wrap">
+        <div class="login-card">
+            <div class="login-header">
+                <img src="images/logo.jpg" alt="Logo" style="height:60px; border-radius:12px;">
+                <h2>CashIt</h2>
+                <p style="color:#64748b;">Create New Account</p>
+            </div>
+        <form id="registerForm">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="Full Name" required>
+            </div>
+            <div class="form-group">
+                <label for="cnic">CNIC Number</label>
+                <input type="text" id="cnic" placeholder="00000-0000000-0" required>
+                <small style="color: var(--text-gray); font-size: 0.8rem;">Format: 00000-0000000-0</small>
+            </div>
+            <div class="form-group">
+                <label for="pin">Create PIN</label>
+                <input type="password" id="pin" placeholder="****" maxlength="4" required>
+            </div>
+            <div class="form-group">
+                <label for="confirmPin">Confirm PIN</label>
+                <input type="password" id="confirmPin" placeholder="****" maxlength="4" required>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Create Account</button>
+        </form>
+        <p style="text-align: center; margin-top: 20px; font-size: 0.9rem;">
+            Already have an account? <a href="login.html" style="color: var(--primary);">Login here</a>
+        </p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

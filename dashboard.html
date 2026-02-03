@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - CashIt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <a href="index.html" class="brand" style="color: white;">
+              <img src="images/logo.jpg" alt="Logo">
+              CashIt
+              </a>
+            <nav class="nav">
+                <a href="dashboard.html" class="nav-link active">
+                    Dashboard
+                </a>
+                <a href="payments.html" class="nav-link">
+                    Payments
+                </a>
+            </nav>
+            <div class="user-mini">
+                <div class="avatar" style="width:50px; height:50px; border-radius:50%; overflow:hidden; display:inline-block; border:2px solid #ccc;">
+                 <img src="images/dp.jpeg" alt="User Avatar" style="width:100%; height:100%; object-fit:cover; display:block;">
+                </div>
+                <div class="user-meta">
+                    <div class="user-name" id="userNameDisplay"></div>
+                    <a href="change-password.html" id="changePasswordLink" style="color: wheat; text-decoration: none; cursor: pointer;">Change PIN</a>
+
+                </div>
+                <button id="logoutBtn" ></button>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main">
+            <header class="page-header">
+                <div class="page-title">
+                    <h1>Dashboard Overview</h1>
+                    <span id="currentDate">Friday, Dec 05 2025</span>
+                </div>
+                <div class="button-group">
+                    <a href="login.html" class="btn logout-btn">Log Out</a>
+                    <a href="payments.html" class="btn transfer-btn">New Transfer</a>
+                </div>
+            </header>
+
+            <div class="stats-grid">
+                <!-- Blue Balance Card -->
+                <div class="card card-green">
+                    <div class="balance-label">Total Balance</div>
+                    <div class="balance-value" id="totalBalance">PKR 1,245,500</div>
+                    <div class="trend">
+                        <svg class="icon" style="width:14px;" viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                        +4.5% vs last month
+                    </div>
+                </div>
+
+                <!-- Savings -->
+                <div class="card">
+                    <div class="stat-label">Savings Account</div>
+                    <div class="stat-value" id="totalSavings">PKR 450,000</div>
+                    <div style="margin-top:20px; font-size:0.85rem; color:#64748b;">Target: PKR 1M</div>
+                </div>
+
+                <!-- Spending -->
+                <div class="card">
+                    <div class="stat-label">Monthly Spending</div>
+                    <div class="stat-value" id="monthlySpending">PKR 85,200</div>
+                    <div class="progress-track">
+                        <div class="progress-bar" style="width: 45%;"></div>
+                    </div>
+                    <div style="margin-top:8px; font-size:0.8rem; color:#64748b; text-align:right;">45% of limit</div>
+                </div>
+            </div>
+
+            <div class="content-grid">
+                <!-- Account Details -->
+                <div class="card">
+                    <h3 style="margin-bottom:20px; font-size:1.1rem;">Account Details</h3>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">Account Holder</div>
+                        <div class="detail-value" id="accountName">Muhammad Ali</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">CNIC Number</div>
+                        <div class="detail-value" id="accountCnic">35202-9823471-2</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">IBAN</div>
+                        <div class="copy-box">PK35 1203 0092 1120 3344 55</div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-label">Currency</div>
+                        <div class="detail-value">PKR (Rs)</div>
+                    </div>
+                </div>
+
+                <!-- Transactions -->
+                <div class="card">
+                    <div style="display:flex; justify-content:space-between; margin-bottom:20px;">
+                        <h3 style="font-size:1.1rem;">Latest Transactions</h3>
+                        <a href="#" >View All</a>
+                    </div>
+                    
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Transaction</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                    <th style="text-align:right;">Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody id="transactionList">
+                                <!-- Populated via JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('currentDate').textContent = new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+    </script>
+</body>
+</html>

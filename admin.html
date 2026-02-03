@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - CashIt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo.jpg" alt="CashIt Logo"
+            style="width: 40px; height: 40px; border-radius: 8px;">
+            <a href="index.html" class="home-link"><h1>CashIt</h1></a>
+        </div>
+        <a href="login.html">
+        <button class="login-btn" id="logoutBtn">Log Out</button>
+        </a>
+</div>
+        <div class="menu-btn" id="menuBtn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+<br>
+<br>
+    <div class="container dashboard-grid" style="grid-template-columns: 1fr;">
+        <main class="main-content">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h2 class="section-title" style="margin: 0;">Admin Control Panel</h2>
+                <div style="color: var(--text-gray);">System Status: <span style="color: var(--success); font-weight: bold;">Online</span></div>
+            </div>
+            <br>
+            <div class="recent-transactions">
+                <h3>User Management</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>CNIC</th>
+                            <th>Balance</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="userList">
+                        <!-- JS Populated -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

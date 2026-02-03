@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - CashIt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo.jpg" alt="CashIt Logo"
+            style="width: 40px; height: 40px; border-radius: 8px;">
+            <a href="index.html" class="home-link"><h1>CashIt</h1></a>
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+            <a href="policy.html">Privacy Policy</a>
+        </div>
+        <div class="nav-actions">
+        <a href="login.html">
+    <button class="login-btn" id="loginBtn">Login</button>
+</a>
+</div>
+        <div class="menu-btn" id="menuBtn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <div class="login-wrap">
+        <div class="login-card">
+            <div class="login-header">
+                <img src="images/logo.jpg" alt="Logo" style="height:60px; border-radius:12px;">
+                <h2>CashIt</h2>
+                <p style="color:#64748b;">Admin Access</p>
+            </div>
+        <form id="adminLoginForm">
+            <div class="form-group">
+                <label for="cnic">Admin ID / CNIC</label>
+                <input type="text" id="cnic" placeholder="00000-0000000-0" required>
+            </div>
+            <div class="form-group">
+                <label for="pin">Secure PIN</label>
+                <input type="password" id="pin" placeholder="****" maxlength="4" required>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Access Panel</button>
+        </form>
+        <p style="text-align: center; margin-top: 20px; font-size: 0.9rem;">
+            <a href="login.html" style="color: var(--text-gray);">Return to Customer Login</a>
+        </p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

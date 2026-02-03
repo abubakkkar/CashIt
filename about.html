@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - CashIt Banking</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="about.css">
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo.jpg" alt="CashIt Logo"
+            style="width: 40px; height: 40px; border-radius: 8px;">
+            <a href="index.html" class="home-link"><h1>CashIt</h1></a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html"class="active">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+            <a href="policy.html">Privacy Policy</a>
+        </div>
+        <div class="nav-actions">     
+            <a href="login.html">
+            <button class="login-btn" id="loginBtn">Login</button></a> 
+        </div>
+        <div class="menu-btn" id="menuBtn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <header>
+        <h1>About CashIt</h1>
+        <p>Secure, Modern, and Customer-First Banking</p>
+    </header>
+
+    <section>
+        <h2>Who We Are</h2>
+        <p>CashIt is a next-generation digital banking platform dedicated to providing secure, convenient, and innovative financial solutions to individuals and businesses. Founded with the vision of making banking simple and accessible to everyone, we combine cutting-edge technology with a customer-centric approach.</p>
+    </section>
+
+    <section>
+        <h2>Our Mission</h2>
+        <p>To empower our customers with seamless financial tools that help them manage, grow, and protect their money — anytime, anywhere.</p>
+    </section>
+
+    <section>
+        <h2>Our Vision</h2>
+        <p>To be the most trusted and preferred digital banking partner, redefining how people interact with their finances in the modern world.</p>
+    </section>
+
+    <section>
+        <h2>Our Values</h2>
+        <ul>
+            <li><strong>Security:</strong> Protecting your money and data is our top priority.</li>
+            <li><strong>Transparency:</strong> No hidden fees, no surprises — just honest banking.</li>
+            <li><strong>Innovation:</strong> Continuously improving our services with the latest technology.</li>
+            <li><strong>Customer Focus:</strong> Your needs come first in everything we do.</li>
+            <li><strong>Inclusivity:</strong> Banking services designed for everyone, everywhere.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Our Journey</h2>
+        <p>Since our launch, CashIt has grown rapidly by putting customers at the heart of everything we do. We started with a simple goal: to eliminate the complexities of traditional banking and replace them with a smooth, intuitive experience. Today, thousands of customers trust us with their daily banking needs.</p>
+    </section>
+
+<footer class="footer">
+    <div class="footer-top">
+
+        <div class="map-container">
+            <h4>Locate Us</h4>
+            <p><i class="fas fa-map-marker-alt"></i> University of Engineering and Technology</p>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.1234567890!2d74.2025144!3d31.5797343!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39191b273d6ed0c1%3A0x4dcac84ea2200944!2sUniversity%20of%20Engineering%20and%20Technology%2C%20Lahore!5e0!3m2!1sen!2s!4v1699999999999!5m2!1sen!2s"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+
+        <div class="footer-section">
+            <h4>Contact</h4>
+            <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+            <p><i class="fas fa-envelope"></i> help@cashit.com</p><br>
+
+            <h4 class="social-title">Reach Us At</h4>
+            <div class="footer-social-links">
+              <a href="https://www.facebook.com" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://www.instagram.com" target="_blank">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="https://www.snapchat.com" target="_blank">
+                <i class="fab fa-snapchat"></i>
+              </a>
+            </div>
+        </div>
+
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+            <a href="privacy.html">Privacy Policy</a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 CashIt Banking</p>
+        <p id="currentDateTime"></p>
+    </div>
+</footer>
+
+
+<script>
+// Scroll Animation - Triggers .visible class when sections come into view
+const sections = document.querySelectorAll('section');
+
+const observerOptions = {
+    threshold: 0.15,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            
+            // Stagger animation for list items inside the section
+            const listItems = entry.target.querySelectorAll('li');
+            listItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateX(0)';
+                }, index * 100); // Stagger delay
+            });
+        }
+    });
+}, observerOptions);
+
+// Observe all sections
+sections.forEach(section => {
+    sectionObserver.observe(section);
+});
+
+// Optional: Pre-apply hidden state to list items for smoother animation
+document.querySelectorAll('section li').forEach(li => {
+    li.style.opacity = '0';
+    li.style.transform = 'translateX(-30px)';
+    li.style.transition = 'all 0.6s ease';
+});
+// 2. Update Current Date & Time in Footer
+const currentDateTime = document.getElementById('currentDateTime');
+if (currentDateTime) {
+    const updateTime = () => {
+        const now = new Date();
+        currentDateTime.textContent = now.toLocaleString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit'
+        });
+    };
+    updateTime();
+    setInterval(updateTime, 1000);
+}
+const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (menuBtn && navLinks) {
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+
+      const icon = menuBtn.querySelector('i');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-times');
+    });
+  }
+</script>
+
+</body>
+</html>

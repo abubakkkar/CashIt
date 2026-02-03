@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - CashIt Banking</title>
+    <link rel="stylesheet" href="faqs.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+     <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo.jpg" alt="CashIt Logo"
+            style="width: 40px; height: 40px; border-radius: 8px;">
+            <a href="index.html" class="home-link"><h1>CashIt</h1></a>
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+            <a href="policy.html" class="active">Privacy Policy</a>
+        </div>
+        <div class="nav-actions">
+            <a href="login.html">
+    <button class="login-btn" id="loginBtn">Login</button>
+</a>
+        </div>
+        <div class="menu-btn" id="menuBtn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav> 
+    <main>
+        <section class="faq-header">
+            <h2>Frequently Asked Questions</h2>
+            <p>Find answers to the most common questions about CashIt online banking.</p>
+        </section>
+
+        <section class="faq-section">
+            <div class="faq-card">
+                <h4>How do I open a CashIt account?</h4>
+                <p>You can open an account online by clicking on the <a href="register.html">Register</a> button and filling in your details. Verification is quick and secure.</p>
+            </div>
+
+            <div class="faq-card">
+                <h4>How do I reset my password?</h4>
+                <p>Click on <a href="login.html">Login</a>, then choose "Forgot Password." Follow the instructions to reset your password via email or SMS.</p>
+            </div>
+
+            <div class="faq-card">
+                <h4>Is CashIt online banking secure?</h4>
+                <p>Yes. We use advanced encryption, two-factor authentication, and continuous monitoring to ensure your data and money are safe.</p>
+            </div>
+
+            <div class="faq-card">
+                <h4>Can I transfer money to other banks?</h4>
+                <p>Absolutely. You can transfer funds to other banks in Pakistan using IBFT or RTGS through our online banking portal or mobile app.</p>
+            </div>
+
+            <div class="faq-card">
+                <h4>How can I contact customer support?</h4>
+                <p>You can reach us via phone at (555) 123-4567, email at <a href="mailto:help@cashit.com">help@cashit.com</a>, or use the live chat available on our website.</p>
+            </div>
+
+            <div class="faq-card">
+                <h4>Are there any fees for using online banking?</h4>
+                <p>Most online banking services are free. Some transactions like international transfers may incur a small fee. Check our <a href="policy.html">fees & charges</a> page for details.</p>
+            </div>
+        </section>
+    </main>
+
+<footer class="footer">
+    <div class="footer-top">
+
+        <div class="map-container">
+            <h4>Locate Us</h4>
+            <p><i class="fas fa-map-marker-alt"></i> University of Engineering and Technology</p>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.1234567890!2d74.2025144!3d31.5797343!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39191b273d6ed0c1%3A0x4dcac84ea2200944!2sUniversity%20of%20Engineering%20and%20Technology%2C%20Lahore!5e0!3m2!1sen!2s!4v1699999999999!5m2!1sen!2s"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+
+        <div class="footer-section">
+            <h4>Contact</h4>
+            <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+            <p><i class="fas fa-envelope"></i> help@cashit.com</p><br>
+
+            <h4 class="social-title">Reach Us At</h4>
+            <div class="footer-social-links">
+              <a href="https://www.facebook.com" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://www.instagram.com" target="_blank">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="https://www.snapchat.com" target="_blank">
+                <i class="fab fa-snapchat"></i>
+              </a>
+            </div>
+        </div>
+
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+            <a href="privacy.html">Privacy Policy</a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 CashIt Banking</p>
+        <p id="currentDateTime"></p>
+    </div>
+</footer>
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuBtn.querySelector('i').classList.toggle('fa-bars');
+            menuBtn.querySelector('i').classList.toggle('fa-times');
+        });
+    </script>
+</body>
+</html>
